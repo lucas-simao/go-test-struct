@@ -44,7 +44,7 @@ func ValidateStruct[T any](t *testing.T, obj *T, validation *T) {
 	typeOf := reflect.TypeOf(validation).Elem()
 
 	for i := 0; i < principal.NumField(); i++ {
-		if !toCompare.Field(i).IsZero() {
+		if !toCompare.Field(i).IsZero() && typeOf.Field(i).Type.Comparable() {
 			if !toCompare.Field(i).Equal(principal.Field(i)) {
 				output := map[string]interface{}{
 					"field":    typeOf.Field(i).Name,
