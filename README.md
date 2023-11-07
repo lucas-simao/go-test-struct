@@ -4,6 +4,11 @@ This package is used to validate any struct, you should pass two structs to veri
 
 This func only will check values is different from zero. [Example of zero values](https://go.dev/tour/basics/12)
 
+Import package
+```bash
+go get github.com/lucas-simao/go-test-struct
+```
+
 ```go
 type Person struct {
   Name      string
